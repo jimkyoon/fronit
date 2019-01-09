@@ -1,8 +1,5 @@
-// just starting out with a test file
-const app = 'Hello World!';
+#!/usr/bin/env node
 
-// console.log(app);
+const [,, ...args] = process.argv;
 
-const hello = () => app;
-
-module.exports = hello;
+console.log(`Hello ${args}`);

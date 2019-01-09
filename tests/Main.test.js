@@ -1,4 +1,4 @@
-const hello = require('../main');
+const hello = require('../ignoreTest');
 
 describe('Testing main file', () => {
   test('should print out "Hello World!"', () => {
