@@ -1,7 +1,7 @@
 {
   "name": "fronit",
   "author": "Jim Yoon <jimyoon90@gmail.com> (https://github.com/orenJim)",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "description": "a command line tool to help generate frontend components from popular libraries/frameworks",
   "homepage": "https://github.com/orenJim/fronit",
   "main": "main.js",
@@ -9,13 +9,19 @@
     "fronit": "main.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "jest": "^24.7.1"
+    "jest": "^24.7.1",
+    "semantic-release": "^15.13.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orenJim/fronit.git"
+  }
 }
