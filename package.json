@@ -1,7 +1,7 @@
 {
   "name": "fronit",
   "author": "Jim Yoon <jimyoon90@gmail.com> (https://github.com/orenJim)",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "a command line tool to help generate frontend components from popular libraries/frameworks",
   "homepage": "https://github.com/orenJim/fronit",
   "main": "main.js",
