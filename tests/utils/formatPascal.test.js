@@ -1,4 +1,4 @@
-const formatPascal = require('../utils/formatPascal');
+const formatPascal = require('../../utils/formatPascal');
 
 describe('formatPascal', () => {
   test('formats component title to Pascal', () => {

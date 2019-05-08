@@ -1,15 +1,24 @@
 language: node_js
 node_js:
-  - stable
-jobs:
-  include:
-    # Define the release stage that runs semantic-release
-    - stage: release
-      node_js: stable
-      # Advanced: optionally overwrite your default `script` step to skip the tests
-      # script: skip
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - npm run semantic-release
+- "stable"
+notifications:
+email: "false"
+cache:
+directories:
+- "node_modules"
+
+# language: node_js
+# node_js:
+#   - stable
+# jobs:
+#   include:
+#     # Define the release stage that runs semantic-release
+#     - stage: release
+#       node_js: stable
+#       # Advanced: optionally overwrite your default `script` step to skip the tests
+#       # script: skip
+#       deploy:
+#         provider: script
+#         skip_cleanup: true
+#         script:
+#           - npm run semantic-release

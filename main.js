@@ -2,4 +2,4 @@
 
 const [,, ...args] = process.argv;
 
-console.log(`Hello ${args}`);
+const firstArg = args[0];
