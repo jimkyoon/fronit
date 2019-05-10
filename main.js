@@ -3,6 +3,9 @@
 const program = require('commander');
 const chalk = require('chalk');
 
+// require React, Vue and Angular component creators
+const reactComp = require('./react/reactComp');
+
 // library colors
 const reactColor = '#00d8ff';
 const vueColor = '#42b883';
@@ -19,11 +22,11 @@ program.parse(process.argv);
 // redirect process to respective files
 // React
 if (program.React === true) {
-  console.log('Please give your component a name!');
+  // if true, that means React flag was called but no name was given
+  console.log(chalk.bold.hex(reactColor)('Please give your React component a name!'));
 } else if (typeof program.React === 'string') {
-  const name = program.React;
-  console.log(chalk.bold.hex(reactColor)('Creating React component!'));
-  console.log(chalk.bold.hex(reactColor)(`${name}`));
+  // if name was given, pass commandargs to reactComp
+  reactComp(process.argv);
 }
 // Vue
 if (program.Vue === true) {
