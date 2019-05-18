@@ -1,6 +1,5 @@
 # fronit
 
-[![npm version](http://img.shields.io/npm/v/REPO.svg?style=flat)](https://npmjs.org/package/fronit "View this project on npm")
 ![npm](https://img.shields.io/npm/dt/fronit.svg)
 [![Build Status](https://travis-ci.org/orenJim/fronit.svg?branch=master)](https://travis-ci.org/orenJim/fronit)
 [![Coverage Status](https://coveralls.io/repos/github/orenJim/fronit/badge.svg?branch=master)](https://coveralls.io/github/orenJim/fronit?branch=master)
