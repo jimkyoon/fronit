@@ -2,7 +2,7 @@
   "name": "fronit",
   "author": "Jim Yoon <jimyoon90@gmail.com> (https://github.com/orenJim)",
   "version": "0.0.0-development",
-  "description": "a command line tool to help generate frontend components from popular libraries/frameworks",
+  "description": "a command line tool to help quickly and efficiently generate frontend components from popular libraries/frameworks",
   "homepage": "https://github.com/orenJim/fronit",
   "main": "main.js",
   "bin": {
@@ -12,6 +12,10 @@
     "test": "jest",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0"
+  },
   "devDependencies": {
     "coveralls": "^3.0.3",
     "eslint": "^5.12.0",
@@ -19,13 +23,9 @@
     "eslint-plugin-import": "^2.14.0",
     "jest": "^24.7.1"
   },
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/orenJim/fronit.git"
   },
-  "dependencies": {
-    "chalk": "^2.4.2",
-    "commander": "^2.20.0"
-  }
+  "license": "MIT"
 }
