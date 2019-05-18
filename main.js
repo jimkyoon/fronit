@@ -5,6 +5,9 @@ const chalk = require('chalk');
 
 // require React, Vue and Angular component creators
 const reactComp = require('./react/reactComp');
+// Not using Vue and Angular yet! Work in progress...
+// const vueComp = require('./vue/vueComp');
+// const angularComp = require('./angular/angularComp');
 
 // library colors
 const reactColor = '#00d8ff';
