@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-- "stable"
+  - "stable"
+script:
+  - npm run test:coveralls
 notifications:
-email: "false"
-cache:
-directories:
-- "node_modules"
+  email: false
 
+# below was not working well
 # language: node_js
 # node_js:
 #   - stable

@@ -9,9 +9,11 @@
     "fronit": "main.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "devDependencies": {
+    "coveralls": "^3.0.3",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
