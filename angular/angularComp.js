@@ -11,6 +11,8 @@ const angularComp = (args) => {
   program.parse(args);
 
   if (typeof program.Angular === 'string') console.log(chalk.bold.hex(angularColor)('Working!'), `${program.Angular}`);
+
+  console.log(chalk.bgRed('ATTENTION!'), chalk.bold.hex(angularColor)('Angular functionality coming soon!'));
 };
 
 module.exports = angularComp;

@@ -11,6 +11,8 @@ const vueComp = (args) => {
   program.parse(args);
 
   if (typeof program.Vue === 'string') console.log(chalk.bold.hex(vueColor)('Working!'), `${program.Vue}`);
+
+  console.log(chalk.bgRed('ATTENTION!'), chalk.bold.hex(vueColor)('Vue functionality coming soon!'));
 };
 
 module.exports = vueComp;
