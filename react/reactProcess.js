@@ -1,3 +1,9 @@
+/**
+ * Process args through commander for React components and send them to template generators
+ * @param { Array } args - process.argv array
+ * @returns { File } a React component in .js, .jsx, .ts or .tsx
+ */
+
 const program = require('commander');
 const chalk = require('chalk');
 
@@ -18,13 +24,22 @@ const reactProcess = (args) => {
     .option('-cwu, --componentWillUnmount', 'componentWillUnmount')
     .option('-gdsfe, --getDerivedStateFromError', 'getDerivedStateFromError')
     .option('-cdc, --componentDidCatch', 'componentDidCatch')
+    .option('-ptypes, --propTypes', 'propTypes')
     .option('-dprops, --defaultProps', 'defaultProps')
     .option('-frag, --fragment', 'fragments')
     .option('.js, --js', 'JS file type')
     .option('.jsx, --jsx', 'JSX file type')
-    .option('.ts, --ts', 'TypeScript file type');
+    .option('.ts, --ts', 'TypeScript file type')
+    .option('.tsx, --tsx', 'TypeScript JSX file type');
     // more options coming soon
-    // todo: hooks, customFunc (bind or arrow), context?, HOC?, propTypes
+    /*
+    todo:
+      - hooks
+      - customFunc (bind or arrow)
+      - redux/mobx
+      - context?
+      - HOC?
+    */
 
   program.parse(args);
 
@@ -41,6 +56,7 @@ const reactProcess = (args) => {
     componentWillUnmount: false,
     getDerivedStateFromError: false,
     componentDidCatch: false,
+    propTypes: false,
     defaultProps: false,
     fragment: false,
     fileType: '',
@@ -65,6 +81,7 @@ const reactProcess = (args) => {
   if (program.componentWillUnmount) compData.componentWillUnmount = true;
   if (program.getDerivedStateFromError) compData.getDerivedStateFromError = true;
   if (program.componentDidCatch) compData.componentDidCatch = true;
+  if (program.propTypes) compData.propTypes = true;
   if (program.defaultProps) compData.defaultProps = true;
   if (program.fragment) compData.fragment = true;
   // currently set jsx to be default file type if more than 2 options are chosen
@@ -74,6 +91,8 @@ const reactProcess = (args) => {
     compData.fileType = '.js';
   } else if (program.ts) {
     compData.fileType = '.ts';
+  } else if (program.tsx) {
+    compData.fileType = '.tsx';
   }
 
   // todo: send off compData to template generator
