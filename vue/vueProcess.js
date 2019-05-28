@@ -3,7 +3,7 @@ const chalk = require('chalk');
 
 const vueColor = '#42b883';
 
-const vueComp = (args) => {
+const vueProcess = (args) => {
   program
     .option('V, Vue [type]', 'Create a new Vue component');
     // more options coming soon
@@ -15,4 +15,4 @@ const vueComp = (args) => {
   console.log(chalk.bgRed('ATTENTION!'), chalk.bold.hex(vueColor)('Vue functionality coming soon!'));
 };
 
-module.exports = vueComp;
+module.exports = vueProcess;

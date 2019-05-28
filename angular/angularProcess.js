@@ -3,7 +3,7 @@ const chalk = require('chalk');
 
 const angularColor = '#b52e31';
 
-const angularComp = (args) => {
+const angularProcess = (args) => {
   program
     .option('A, Angular [type]', 'Create a new Angular component');
     // more options coming soon
@@ -15,4 +15,4 @@ const angularComp = (args) => {
   console.log(chalk.bgRed('ATTENTION!'), chalk.bold.hex(angularColor)('Angular functionality coming soon!'));
 };
 
-module.exports = angularComp;
+module.exports = angularProcess;

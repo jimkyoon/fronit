@@ -3,7 +3,7 @@ const chalk = require('chalk');
 
 const reactColor = '#00d8ff';
 
-const reactComp = (args) => {
+const reactProcess = (args) => {
   program
     .option('R, React [type]', 'Create a new React component')
     .option('-c, --class', 'Class Component')
@@ -81,4 +81,4 @@ const reactComp = (args) => {
   console.log(chalk.bold.hex(reactColor)('Finished building '), compData.name, chalk.bold.hex(reactColor)('component!'));
 };
 
-module.exports = reactComp;
+module.exports = reactProcess;
