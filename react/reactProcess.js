@@ -7,6 +7,9 @@
 const program = require('commander');
 const chalk = require('chalk');
 
+const classComp = require('./componentTypes/class');
+const funcComp = require('./componentTypes/functional');
+
 const reactColor = '#00d8ff';
 
 const reactProcess = (args) => {
@@ -60,6 +63,7 @@ const reactProcess = (args) => {
     defaultProps: false,
     fragment: false,
     fileType: '',
+    extension: '',
   };
 
   // reassign compData properties with commander option results
@@ -86,13 +90,17 @@ const reactProcess = (args) => {
   if (program.fragment) compData.fragment = true;
   // currently set jsx to be default file type if more than 2 options are chosen
   if (program.jsx) {
-    compData.fileType = '.jsx';
+    compData.fileType = 'js';
+    compData.extension = '.jsx';
   } else if (program.js) {
-    compData.fileType = '.js';
+    compData.fileType = 'js';
+    compData.extension = '.js';
   } else if (program.ts) {
-    compData.fileType = '.ts';
+    compData.fileType = 'ts';
+    compData.extension = '.ts';
   } else if (program.tsx) {
-    compData.fileType = '.tsx';
+    compData.fileType = 'ts';
+    compData.extension = '.tsx';
   }
 
   // todo: send off compData to template generator

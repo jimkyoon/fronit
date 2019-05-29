@@ -7,15 +7,34 @@
 import formatPascal from '../../utils/formatPascal';
 
 const classComponent = (compData) => {
-  const { name, type, state, getDerivedStateFromProps, componentDidMount, shouldComponentUpdate, getSnapshotBeforeUpdate, componentDidUpdate, componentWillUnmount, getDerivedStateFromError, componentDidCatch, propTypes, defaultProps, fragment } = compData;
+  const {
+    name,
+    type,
+    state,
+    getDerivedStateFromProps,
+    componentDidMount,
+    shouldComponentUpdate,
+    getSnapshotBeforeUpdate,
+    componentDidUpdate,
+    componentWillUnmount,
+    getDerivedStateFromError,
+    componentDidCatch,
+    propTypes,
+    defaultProps,
+    fragment,
+    fileType,
+  } = compData;
 
   const pascalName = formatPascal(name);
+  let importJSorTS;
+  if (fileType === 'js') importJSorTS = `import React from 'react';`;
+  if (fileType === 'ts') importJSorTS = `import * as React from 'react';`;
 
   const template =
-`import React from 'react';
+`${importJSorTS}
 ${propTypes && `import PropTypes from 'prop-types';`}
 
-class ${pascalName} extends React.${type === 'class' ? 'Component' : 'PureComponent'} {
+class ${pascalName} extends React.${type === 'class' ? 'Component' : 'PureComponent'}${fileType === 'ts' && '<P,S>'} {
   constructor(props) {
     super(props);
     ${state && `this.state: {
@@ -54,7 +73,7 @@ class ${pascalName} extends React.${type === 'class' ? 'Component' : 'PureCompon
   render() {
     return (
       ${fragment ? '<>' : '<div>'}
-        {/* Insert elements and components */}
+        {/* Insert elements and/or components */}
       ${fragment ? '</>' : '</div>'}
     );
   }
@@ -67,6 +86,8 @@ class ${pascalName} extends React.${type === 'class' ? 'Component' : 'PureCompon
     // insert default props here
   };`}
 }
+
+export default ${pascalName};
 `;
 
   return template;
