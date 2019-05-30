@@ -9,6 +9,7 @@ const vueProcess = require('./vue/vueProcess');
 const angularProcess = require('./angular/angularProcess');
 
 const cliArgs = process.argv;
+const currentWorkingDirectory = process.cwd();
 
 // hand off the arguments to React, Vue or Angular process based off process.argv index 2
 if (cliArgs[2] === 'React' || cliArgs[2] === 'R') {
