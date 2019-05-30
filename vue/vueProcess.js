@@ -3,7 +3,14 @@ const chalk = require('chalk');
 
 const vueColor = '#42b883';
 
-const vueProcess = (args) => {
+/**
+ * Process args through commander for Vue components and send them to template generators
+ * @param {Array} args - process.argv, array of inputs
+ * @param {String} pwd - process.cwd, string for current directory path
+ * @returns {File} a Angular component in .vue or .js
+ */
+
+const vueProcess = (args, pwd) => {
   program
     .option('V, Vue [type]', 'Create a new Vue component');
     // more options coming soon

@@ -3,7 +3,14 @@ const chalk = require('chalk');
 
 const angularColor = '#b52e31';
 
-const angularProcess = (args) => {
+/**
+ * Process args through commander for Angular components and send them to template generators
+ * @param {Array} args - process.argv, array of inputs
+ * @param {String} pwd - process.cwd, string for current directory path
+ * @returns {File} a Angular component in .ts or .tsx
+ */
+
+const angularProcess = (args, pwd) => {
   program
     .option('A, Angular [type]', 'Create a new Angular component');
     // more options coming soon

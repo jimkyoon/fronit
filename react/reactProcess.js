@@ -10,7 +10,7 @@ const reactColor = '#00d8ff';
 /**
  * Process args through commander for React components and send them to template generators
  * @param {Array} args - process.argv, array of inputs
- * @param {String} pwd - process.cwd, 
+ * @param {String} pwd - process.cwd, string for current directory path
  * @returns {File} a React component in .js, .jsx, .ts or .tsx
  */
 
@@ -29,6 +29,16 @@ const reactProcess = (args, pwd) => {
     .option('--cwu, --componentWillUnmount', 'componentWillUnmount')
     .option('--gdsfe, --getDerivedStateFromError', 'getDerivedStateFromError')
     .option('--cdc, --componentDidCatch', 'componentDidCatch')
+    .option('--us, --useState', 'useState hooks')
+    .option('--ue, --useEffect', 'useEffect hooks')
+    .option('--uc, --useContext', 'useContext hooks')
+    .option('--ur, --useReducer', 'useReducer hooks')
+    .option('--ucb, --useCallback', 'useCallback hooks')
+    .option('--um, --useMemo', 'useMemo hooks')
+    .option('--uref, --useRef', 'useRef hooks')
+    .option('--uih, --useImperativeHandle', 'useImperativeHandle hooks')
+    .option('--ule, --useLayoutEffect', 'useLayoutEffect hooks')
+    .option('--udv, --useDebugValue', 'useDebugValue hooks')
     .option('--ptypes, --propTypes', 'propTypes')
     .option('--dprops, --defaultProps', 'defaultProps')
     .option('--frag, --fragment', 'fragments')
@@ -39,13 +49,11 @@ const reactProcess = (args, pwd) => {
     // more options coming soon
     /*
     todo:
-      - hooks
       - customFunc (bind or arrow)
       - redux/mobx
       - context?
       - HOC?
     */
-
   program.parse(args);
 
   // object to hold options and to be passed onto the file maker
@@ -61,6 +69,16 @@ const reactProcess = (args, pwd) => {
     componentWillUnmount: false,
     getDerivedStateFromError: false,
     componentDidCatch: false,
+    useState: false,
+    useEffect: false,
+    useContext: false,
+    useReducer: false,
+    useCallback: false,
+    useMemo: false,
+    useRef: false,
+    useImperativeHandle: false,
+    useLayoutEffect: false,
+    useDebugValue: false,
     propTypes: false,
     defaultProps: false,
     fragment: false,
@@ -87,6 +105,16 @@ const reactProcess = (args, pwd) => {
   if (program.componentWillUnmount) compData.componentWillUnmount = true;
   if (program.getDerivedStateFromError) compData.getDerivedStateFromError = true;
   if (program.componentDidCatch) compData.componentDidCatch = true;
+  if (program.useState) compData.useState = true;
+  if (program.useEffect) compData.useEffect = true;
+  if (program.useContext) compData.useContext = true;
+  if (program.useReducer) compData.useReducer = true;
+  if (program.useCallback) compData.useCallback = true;
+  if (program.useMemo) compData.useMemo = true;
+  if (program.useRef) compData.useRef = true;
+  if (program.useImperativeHandle) compData.useImperativeHandle = true;
+  if (program.useLayoutEffect) compData.useLayoutEffect = true;
+  if (program.useDebugValue) compData.useDebugValue = true;
   if (program.propTypes) compData.propTypes = true;
   if (program.defaultProps) compData.defaultProps = true;
   if (program.fragment) compData.fragment = true;
