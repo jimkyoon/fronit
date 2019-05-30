@@ -1,35 +1,37 @@
-/**
- * Process args through commander for React components and send them to template generators
- * @param { Array } args - process.argv array
- * @returns { File } a React component in .js, .jsx, .ts or .tsx
- */
-
 const program = require('commander');
 const chalk = require('chalk');
 
+// template generators
 const classComp = require('./componentTypes/class');
 const funcComp = require('./componentTypes/functional');
 
 const reactColor = '#00d8ff';
 
-const reactProcess = (args) => {
+/**
+ * Process args through commander for React components and send them to template generators
+ * @param {Array} args - process.argv, array of inputs
+ * @param {String} pwd - process.cwd, 
+ * @returns {File} a React component in .js, .jsx, .ts or .tsx
+ */
+
+const reactProcess = (args, pwd) => {
   program
     .option('R, React [type]', 'Create a new React component')
     .option('-c, --class', 'Class Component')
     .option('-f, --functional', 'Functional Component')
     .option('-p, --pure', 'Pure Component')
     .option('-s, --state', 'State')
-    .option('-gdsfp, --getDerivedStateFromProps', 'getDerivedStateFromProps')
-    .option('-cdm, --componentDidMount', 'componentDidMount')
-    .option('-scu, --shouldComponentUpdate', 'shouldComponentUpdate')
-    .option('-gsbu, --getSnapshotBeforeUpdate', 'getSnapshotBeforeUpdate')
-    .option('-cdu, --componentDidUpdate', 'componentDidUpdate')
-    .option('-cwu, --componentWillUnmount', 'componentWillUnmount')
-    .option('-gdsfe, --getDerivedStateFromError', 'getDerivedStateFromError')
-    .option('-cdc, --componentDidCatch', 'componentDidCatch')
-    .option('-ptypes, --propTypes', 'propTypes')
-    .option('-dprops, --defaultProps', 'defaultProps')
-    .option('-frag, --fragment', 'fragments')
+    .option('--gdsfp, --getDerivedStateFromProps', 'getDerivedStateFromProps')
+    .option('--cdm, --componentDidMount', 'componentDidMount')
+    .option('--scu, --shouldComponentUpdate', 'shouldComponentUpdate')
+    .option('--gsbu, --getSnapshotBeforeUpdate', 'getSnapshotBeforeUpdate')
+    .option('--cdu, --componentDidUpdate', 'componentDidUpdate')
+    .option('--cwu, --componentWillUnmount', 'componentWillUnmount')
+    .option('--gdsfe, --getDerivedStateFromError', 'getDerivedStateFromError')
+    .option('--cdc, --componentDidCatch', 'componentDidCatch')
+    .option('--ptypes, --propTypes', 'propTypes')
+    .option('--dprops, --defaultProps', 'defaultProps')
+    .option('--frag, --fragment', 'fragments')
     .option('.js, --js', 'JS file type')
     .option('.jsx, --jsx', 'JSX file type')
     .option('.ts, --ts', 'TypeScript file type')
@@ -103,9 +105,24 @@ const reactProcess = (args) => {
     compData.extension = '.tsx';
   }
 
-  // todo: send off compData to template generator
+  // create template based on type of component
+  let template;
+  switch (compData.type) {
+    case 'class':
+      template = classComp(compData);
+      break;
+    case 'functional':
+      template = funcComp(compData);
+      break;
+    case 'pure':
+      template = classComp(compData);
+      break;
+    default:
+      console.log('Please pick a component type! i.e. class, func or pure');
+  }
   console.log(compData);
-  console.log(chalk.bold.hex(reactColor)('Finished building '), compData.name, chalk.bold.hex(reactColor)('component!'));
+  console.log(template);
+  console.log(chalk.bold.hex(reactColor)(`Finished building ${compData.name} component!`));
 };
 
 module.exports = reactProcess;

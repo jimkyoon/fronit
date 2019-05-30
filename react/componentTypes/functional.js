@@ -1,10 +1,10 @@
+const formatPascal = require('../../utils/formatPascal');
+
 /**
  * Returns a React Functional Component template to fill a fsFileWrite
- * @param { Object } compData - an object filled with all options a functional component might need
- * @returns { String} React Functional Component template
+ * @param {Object} compData - an object filled with all options a functional component might need
+ * @returns {String} React Functional Component template
  */
-
-import formatPascal from '../../utils/formatPascal';
 
 const functionalComponent = (compData) => {
   const {
@@ -47,4 +47,4 @@ export default ${pascalName};
   return template;
 };
 
-export default functionalComponent;
+module.exports = functionalComponent;
