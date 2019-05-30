@@ -69,6 +69,7 @@ const reactProcess = (args, pwd) => {
     componentWillUnmount: false,
     getDerivedStateFromError: false,
     componentDidCatch: false,
+    hooks: false,
     useState: false,
     useEffect: false,
     useContext: false,
@@ -105,16 +106,46 @@ const reactProcess = (args, pwd) => {
   if (program.componentWillUnmount) compData.componentWillUnmount = true;
   if (program.getDerivedStateFromError) compData.getDerivedStateFromError = true;
   if (program.componentDidCatch) compData.componentDidCatch = true;
-  if (program.useState) compData.useState = true;
-  if (program.useEffect) compData.useEffect = true;
-  if (program.useContext) compData.useContext = true;
-  if (program.useReducer) compData.useReducer = true;
-  if (program.useCallback) compData.useCallback = true;
-  if (program.useMemo) compData.useMemo = true;
-  if (program.useRef) compData.useRef = true;
-  if (program.useImperativeHandle) compData.useImperativeHandle = true;
-  if (program.useLayoutEffect) compData.useLayoutEffect = true;
-  if (program.useDebugValue) compData.useDebugValue = true;
+  if (program.useState) {
+    compData.hooks = true;
+    compData.useState = true;
+  }
+  if (program.useEffect) {
+    compData.hooks = true;
+    compData.useEffect = true;
+  }
+  if (program.useContext) {
+    compData.hooks = true;
+    compData.useContext = true;
+  }
+  if (program.useReducer) {
+    compData.hooks = true;
+    compData.useReducer = true;
+  }
+  if (program.useCallback) {
+    compData.hooks = true;
+    compData.useCallback = true;
+  }
+  if (program.useMemo) {
+    compData.hooks = true;
+    compData.useMemo = true;
+  }
+  if (program.useRef) {
+    compData.hooks = true;
+    compData.useRef = true;
+  }
+  if (program.useImperativeHandle) {
+    compData.hooks = true;
+    compData.useImperativeHandle = true;
+  }
+  if (program.useLayoutEffect) {
+    compData.hooks = true;
+    compData.useLayoutEffect = true;
+  }
+  if (program.useDebugValue) {
+    compData.hooks = true;
+    compData.useDebugValue = true;
+  }
   if (program.propTypes) compData.propTypes = true;
   if (program.defaultProps) compData.defaultProps = true;
   if (program.fragment) compData.fragment = true;
