@@ -1,4 +1,3 @@
-const fs = require('fs');
 const program = require('commander');
 const chalk = require('chalk');
 
@@ -200,7 +199,6 @@ const reactProcess = async (args, pwd) => {
       console.log('Please pick a component type next time!\n i.e. class, func or pure\n Component was still created but defaulted to class component!');
   }
 
-  console.log(template);
   // format to remove blank lines
   template = formatBlankLines(template);
 
