@@ -8,16 +8,17 @@ const reactProcess = require('./react/reactProcess');
 const vueProcess = require('./vue/vueProcess');
 const angularProcess = require('./angular/angularProcess');
 
+// grab inputs and directory
 const cliArgs = process.argv;
-const currentWorkingDirectory = process.cwd();
+const currentDirectory = process.cwd();
 
 // hand off the arguments to React, Vue or Angular process based off process.argv index 2
 if (cliArgs[2] === 'React' || cliArgs[2] === 'R') {
-  reactProcess(cliArgs);
+  reactProcess(cliArgs, currentDirectory);
 } else if (cliArgs[2] === 'Vue' || cliArgs[2] === 'V') {
-  vueProcess(cliArgs);
+  vueProcess(cliArgs, currentDirectory);
 } else if (cliArgs[2] === 'Angular' || cliArgs[2] === 'A') {
-  angularProcess(cliArgs);
+  angularProcess(cliArgs, currentDirectory);
 } else {
   // work on messages based on error/noinput
   console.log(chalk.bgRed('Please read the guide/docs!'));

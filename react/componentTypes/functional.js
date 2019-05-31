@@ -1,5 +1,3 @@
-const formatPascal = require('../../utils/formatPascal');
-
 /**
  * Returns a React Functional Component template to fill a fsFileWrite
  * @param {Object} compData - an object filled with all options a functional component might need
@@ -26,7 +24,6 @@ const functionalComponent = (compData) => {
     fileType,
   } = compData;
 
-  const pascalName = formatPascal(name);
   let importJSorTS;
   if (fileType === 'js') {
     let importString = 'import React';
@@ -56,17 +53,17 @@ const functionalComponent = (compData) => {
 `${importJSorTS}
 ${propTypes ? `import PropTypes from 'prop-types';` : ''}
 
-const ${pascalName} = (props${fileType === 'ts' && ': any'}) => {
-  ${useState ? 'const [state, setState] = useState(initialState);' : ''}
-  ${useEffect ? 'useEffect();' : ''}
-  ${useContext ? 'const value = useContext(MyContext);' : ''}
-  ${useReducer ? 'const [state, dispatch] = useReducer(reducer, initialArg, init);' : ''}
-  ${useCallback ? 'const memoizedCallback = useCallback();' : ''}
-  ${useMemo ? 'const memoizedValue = useMemo();' : ''}
-  ${useRef ? 'const refContainer = useRef(initialValue)' : ''}
-  ${useImperativeHandle ? 'useImperativeHandle(ref, createHandle, [deps])' : ''}
-  ${useLayoutEffect ? 'useLayoutEffect();' : ''}
-  ${useDebugValue ? 'useDebugValue(value);' : ''}
+const ${name} = (props${fileType === 'ts' ? ': any' : ''}) => {
+${useState ? '  const [state, setState] = useState(initialState);' : ''}
+${useEffect ? '  useEffect();' : ''}
+${useContext ? '  const value = useContext(MyContext);' : ''}
+${useReducer ? '  const [state, dispatch] = useReducer(reducer, initialArg, init);' : ''}
+${useCallback ? '  const memoizedCallback = useCallback();' : ''}
+${useMemo ? '  const memoizedValue = useMemo();' : ''}
+${useRef ? '  const refContainer = useRef(initialValue)' : ''}
+${useImperativeHandle ? '  useImperativeHandle(ref, createHandle, [deps])' : ''}
+${useLayoutEffect ? '  useLayoutEffect();' : ''}
+${useDebugValue ? '  useDebugValue(value);' : ''}
   return (
     ${fragment ? '<>' : '<div>'}
       {/* Insert elements and/or components */}
@@ -74,16 +71,15 @@ const ${pascalName} = (props${fileType === 'ts' && ': any'}) => {
   );
 };
 
-${propTypes ? `${pascalName}.propTypes = {
+${propTypes ? `${name}.propTypes = {
   // insert type checks here
 };` : ''}
 
-${defaultProps ? `${pascalName}.defaultProps = {
+${defaultProps ? `${name}.defaultProps = {
   // insert default props here
 };` : ''}
 
-export default ${pascalName};
-`;
+export default ${name};`;
 
   return template;
 };
