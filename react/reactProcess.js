@@ -94,7 +94,13 @@ const reactProcess = async (args, pwd) => {
   };
 
   // reassign compData properties with commander option results
-  if (typeof program.React === 'string') compData.name = pascalFormat(program.React);
+  if (typeof program.React === 'string') {
+    compData.name = pascalFormat(program.React);
+  } else if (program.React === true) {
+    // if user did have give a component name, then exit
+    console.log(chalk.bgRed('Please give your component a name!\n'), 'i.e. fronit React Hello\n will create a component named Hello.\n Please look at docs for all options!');
+    return;
+  }
   // currently set to default to class if more than 2 options are chosen
   if (program.class) {
     compData.type = 'class';
