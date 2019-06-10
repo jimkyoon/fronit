@@ -13,8 +13,8 @@ const createFile = require('../utils/createFile');
 const reactColor = '#00d8ff';
 
 /**
- * Process args through commander for React components and send them to template generators
- * @param {Array} args - process.argv, array of inputs
+ * Process args through commander for React component options, send component data to template generators, then creates files
+ * @param {Array} args - process.argv, array of inputs from command line
  * @param {String} pwd - process.cwd, string for current directory path
  * @returns {File} a React component in .js, .jsx, .ts or .tsx
  */
@@ -176,7 +176,7 @@ const reactProcess = async (args, pwd) => {
     compData.extension = 'tsx';
   }
 
-  // checks to make sure bare necessities were called
+  // checks to make sure bare minimum were called
   // if not, defaults here
   // also warnings called here
   if (compData.type === '') {
@@ -186,7 +186,7 @@ const reactProcess = async (args, pwd) => {
   if (compData.fileType === '') {
     compData.fileType = 'js';
     compData.extension = 'jsx';
-    console.log(chalk.bgRed('Please pick a file type and extension next time!\n'), 'i.e. file type = js or ts\n i.e. extension: .js, .jsx, .ts or .tsx\n Component was still created but defaulted to a js file type and .jsx extension!');
+    console.log(chalk.bgRed('Please pick a file type and extension next time!\n'), 'i.e. file type: js or ts\n i.e. extension: .js, .jsx, .ts or .tsx\n Component was still created but defaulted to a js file type and .jsx extension!');
   }
 
   // create template based on type of component, passing compData
@@ -216,7 +216,7 @@ const reactProcess = async (args, pwd) => {
   if (finish) {
     console.log(chalk.bold.hex(reactColor)(`Finished building ${compData.name} component!`));
   } else {
-    console.log('something happened!');
+    console.log('Something happened!');
   }
 };
 
