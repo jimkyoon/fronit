@@ -31,7 +31,7 @@ const classComponent = (compData) => {
 `${importJSorTS}
 ${propTypes ? `import PropTypes from 'prop-types';` : ''}
 
-class ${name} extends React.${type === 'class' ? 'Component' : 'PureComponent'}${fileType === 'ts' ? '<P,S>' : ''} {
+class ${name} extends React.${type === 'class' ? 'Component' : 'PureComponent'}${fileType === 'ts' ? '<>' : ''} {
   constructor(props) {
     super(props);
 ${state ? `    this.state: {
@@ -72,13 +72,15 @@ ${componentDidCatch ? `  componentDidCatch(error, info) {
       ${fragment ? '</>' : '</div>'}
     );
   }
-${propTypes ? `  ${name}.propTypes = {
-    // insert type checks here
-  };` : ''}
-${defaultProps ? `  ${name}.defaultProps = {
-    // insert default props here
-  };` : ''}
 }
+
+${propTypes ? `${name}.propTypes = {
+  // insert type checks here
+};` : ''}
+${defaultProps ? `${name}.defaultProps = {
+  // insert default props here
+};` : ''}
+
 export default ${name};`;
 
   return template;
