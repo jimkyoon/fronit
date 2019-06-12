@@ -53,7 +53,11 @@ const functionalComponent = (compData) => {
 `${importJSorTS}
 ${propTypes ? `import PropTypes from 'prop-types';` : ''}
 
-const ${name} = (props${fileType === 'ts' ? ': any' : ''}) => {
+${fileType === 'ts' ? `type Props = {
+  // add prop types here
+};` : ''}
+
+const ${name}${fileType === 'ts' ? ': React.FC<Props>' : ''} = (props${fileType === 'ts' ? ': any' : ''}) => {
 ${useState ? '  const [state, setState] = useState(initialState);' : ''}
 ${useEffect ? '  useEffect();' : ''}
 ${useContext ? '  const value = useContext(MyContext);' : ''}
