@@ -171,12 +171,12 @@ const reactCompData = (args) => {
   // also warnings called here
   if (compData.type === '') {
     compData.type = 'class';
-    console.log(chalk.bgRed('Please pick a component type next time!\n'), 'i.e. class, func or pure\n Component was still created but defaulted to class component!');
+    console.log(chalk.bgRed('Please pick a component type next time!\n'), 'i.e. --class, --functional or --pure\n Component was still created but defaulted to class component!');
   }
   if (compData.fileType === '') {
     compData.fileType = 'js';
     compData.extension = 'jsx';
-    console.log(chalk.bgRed('Please pick a file type and extension next time!\n'), 'i.e. file type: js or ts\n i.e. extension: .js, .jsx, .ts or .tsx\n Component was still created but defaulted to a js file type and .jsx extension!');
+    console.log(chalk.bgRed('Please pick a file type and extension next time!\n'), 'i.e. extension: .js, .jsx, .ts or .tsx\n Component was still created but defaulted to a js file type and .jsx extension!');
   }
 
   // return compData to reactProcess

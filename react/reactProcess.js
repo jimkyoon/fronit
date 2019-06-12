@@ -1,11 +1,13 @@
 const chalk = require('chalk');
 
+// react component options processing
+const reactCompData = require('./reactCompData');
+
 // template generators
 const classComp = require('./componentTypes/class');
 const funcComp = require('./componentTypes/functional');
 
 // utility
-const reactCompData = require('./reactCompData');
 const formatBlankLines = require('../utils/formatBlankLines');
 const createFile = require('../utils/createFile');
 
@@ -35,7 +37,7 @@ const reactProcess = async (args, pwd) => {
       template = classComp(compData);
       break;
     default:
-      console.log('Please pick a component type next time!\n i.e. class, func or pure\n Component was still created but defaulted to class component!');
+      console.log(chalk.bgRed('Please pick a component type next time!\n'), 'i.e. --class, --functional or --pure\n Component was still created but defaulted to class component!');
   }
 
   // format to remove blank lines
