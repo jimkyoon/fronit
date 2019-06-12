@@ -5,3 +5,10 @@
 
 a command line tool to help quickly and efficiently generate frontend components from popular libraries/frameworks
 <!-- [![Coverage Status](https://coveralls.io/repos/github/orenJim/fronit/badge.svg?branch=master)](https://coveralls.io/github/orenJim/fronit?branch=master) -->
+
+        _____                 _ __ 
+       / ___/________  ____  (🏎️)/_
+      / /__/ ___/ __ \/ __ \/ / __/
+     / ___/ /  / /_/ / / / / / /_  
+    /_/  /_/   \____/_/ /_/_/\__/  
+                              
