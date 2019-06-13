@@ -20,6 +20,15 @@ if (cliArgs[2] === 'React' || cliArgs[2] === 'R') {
 } else if (cliArgs[2] === 'Angular' || cliArgs[2] === 'A') {
   angularProcess(cliArgs, currentDirectory);
 } else {
+  console.log(`
+    _____                 _ _ 
+   / ___/________  ____ (🏎️ )/_
+  / /__/ ___/ __ \\/ __ \\/ / _/
+ / ___/ /  / /_/ / / / / / /_  
+/_/  /_/   \\____/_/ /_/_/\\__/  
+                         
+`);
   // work on messages based on error/noinput
-  console.log(chalk.bgRed('Please read the guide/docs!'));
+  console.log(chalk.bgRed('Please read the guide/docs! Link below!'));
+  console.log('https://github.com/orenJim/fronit');
 }
