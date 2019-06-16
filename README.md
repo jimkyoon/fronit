@@ -67,6 +67,6 @@ fronit Angular ComponentName or fronit A ComponentName
 ```
 
 For more detailed options for each library/framework:
-* React
-* Vue
-* Angular
+* [React](react.md)
+* [Vue](vue.md)
+* [Angular](angular.md)
