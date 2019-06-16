@@ -55,15 +55,15 @@ This will create a file called Hello.jsx, which will be a class component with t
 Here are the first set of options you can choose:
 * React (R for shorthand)
 ```sh
-fronit React Component or fronit R ComponentName
+fronit React ComponentName or fronit R ComponentName
 ```
 * Vue (V for shorthand)
 ```sh
-fronit Vue Component or fronit V ComponentName
+fronit Vue ComponentName or fronit V ComponentName
 ```
 * Angular (A for shorthand)
 ```sh
-fronit Angular Component or fronit A ComponentName
+fronit Angular ComponentName or fronit A ComponentName
 ```
 
 For more detailed options for each library/framework:
