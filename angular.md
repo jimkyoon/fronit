@@ -1,0 +1,1 @@
+# fronit Angular options
