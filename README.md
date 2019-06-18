@@ -1,4 +1,4 @@
-# fronit
+# fronit 🏎️
 
 [![Build Status](https://travis-ci.org/orenJim/fronit.svg?branch=master)](https://travis-ci.org/orenJim/fronit)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
@@ -21,8 +21,8 @@ With **fronit**:
 * create component file with one line on command line
 * save time
 * choose what gets created with the file
-  * need "componentDidMount"? add *--cdm* or *--componentDidMount* to your command
-  * going to be using TypeScript? put *.ts* or *.tsx* with your command
+  * need *componentDidMount*? add *--cdm* or *--componentDidMount* to your command
+  * going to be using *TypeScript*? put *.ts* or *.tsx* with your command
 
 No more:
 * creating new empty file
@@ -60,3 +60,9 @@ For more detailed options for each library/framework:
 * [React](react.md)
 * [Vue](vue.md)
 * [Angular](angular.md)
+
+## Contribute
+Please contribute! While I may have started on React, there are still plenty more to do! Vue and Angular also need attention!
+
+Check the doc/guide for React, Vue or Angular for a check list of features I still need to add!
+
