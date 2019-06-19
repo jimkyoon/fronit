@@ -11,19 +11,19 @@ fronit React Hello
 Here are all the available options and their flags:
 
 ### Component Type
-Class Component:
+- Class Component:
 ```sh
 -c or --class
 ```
-Functional Component:
+- Functional Component:
 ```sh
 -f or --functional
 ```
-Pure Component:
+- Pure Component:
 ```sh
 -p or --pure
 ```
-State:
+- State:
 ```sh
 -s or --state
 ```
