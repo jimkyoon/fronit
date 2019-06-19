@@ -47,7 +47,7 @@ const reactCompData = (args) => {
       - customFunc (bind or arrow)
       - redux/mobx
       - context?
-      - HOC?
+      - Styled Components?
     */
   program.parse(args);
 
