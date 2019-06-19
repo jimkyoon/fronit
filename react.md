@@ -11,59 +11,134 @@ fronit React Hello
 Here are all the available options and their flags:
 
 ### Component Type
-Class Component
+Class Component:
 ```sh
 -c or --class
 ```
-Functional Component
+Functional Component:
 ```sh
 -f or --functional
 ```
-Pure Component
+Pure Component:
 ```sh
 -p or --pure
 ```
-State
+State:
 ```sh
 -s or --state
 ```
 
 ### Lifecycle Methods:
-- getDerivedStateFromProps: --gdsfp, --getDerivedStateFromProps
-- componentDidMount: --cdm, --componentDidMount
-- shouldComponentUpdate: --scu, --shouldComponentUpdate
-- getSnapshotBeforeUpdate: --gsbu, --getSnapshotBeforeUpdate
-- componentDidUpdate: --cdu, --componentDidUpdate
-- componentWillUnmount: --cwu, --componentWillUnmount
-- getDerivedStateFromError: --gdsfe, --getDerivedStateFromError
-- componentDidCatch: --cdc, --componentDidCatch
+- getDerivedStateFromProps:
+```sh
+--gdsfp or --getDerivedStateFromProps
+```
+- componentDidMount:
+```sh
+--cdm or --componentDidMount
+```
+- shouldComponentUpdate:
+```sh
+--scu or --shouldComponentUpdate
+```
+- getSnapshotBeforeUpdate:
+```sh
+--gsbu or --getSnapshotBeforeUpdate
+```
+- componentDidUpdate:
+```sh
+--cdu or --componentDidUpdate
+```
+- componentWillUnmount:
+```sh
+--cwu or --componentWillUnmount
+```
+- getDerivedStateFromError:
+```sh
+--gdsfe or --getDerivedStateFromError
+```
+- componentDidCatch:
+```sh
+--cdc or --componentDidCatch
+```
 *Note: these will only work with class components*
 
 ### Hooks:
-- useState: -us, --useState
-- useEffect: --ue, --useEffect
-- useContext: --uc, --useContext
-- useReducer: --ur, --useReducer
-- useCallback: --ucb, --useCallback
-- useMemo: --um, --useMemo
-- useRef: --uref, --useRef
-- useImperativeHandle: --uih, --useImperativeHandle
-- useLayoutEffect: --ule, --useLayoutEffect
-- useDebugValue: --udv, --useDebugValue
+- useState:
+```sh
+--us or --useState
+```
+- useEffect:
+```sh
+--ue or --useEffect
+```
+- useContext:
+```sh
+--uc or --useContext
+```
+- useReducer:
+```sh
+--ur or --useReducer
+```
+- useCallback:
+```sh
+--ucb or --useCallback
+```
+- useMemo:
+```sh
+--um or --useMemo
+```
+- useRef:
+```sh
+--uref or --useRef
+```
+- useImperativeHandle:
+```sh
+--uih or --useImperativeHandle
+```
+- useLayoutEffect:
+```sh
+--ule or --useLayoutEffect
+```
+- useDebugValue:
+```sh
+--udv or --useDebugValue
+```
 *Note: these will only work with functional components*
 
 ### File Type
-- JS file: .js, --js
-- JSX file: .jsx, --jsx
-- TS file: .ts, --ts
-- TSX file: .tsx, --tsx
+- JS file:
+```sh
+.js or --js
+```
+- JSX file:
+```sh
+.jsx or --jsx
+```
+- TS file:
+```sh
+.ts or --ts
+```
+- TSX file:
+```sh
+.tsx or --tsx
+```
 
 ### Others
 Props:
-- propTypes: --ptypes, --propTypes
-- defaultProps: --dprops, --defaultProps
+- propTypes:
+```sh
+--ptypes or --propTypes
+```
+- defaultProps:
+```sh
+--dprops or --defaultProps
+```
 Fragments:
-- Fragments: --frag, --fragment
+- Fragments:
+```sh
+--frag or --fragment
+```
 
 ## Options Coming Soon
 - Custom functions in an array
