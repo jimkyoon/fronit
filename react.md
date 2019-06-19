@@ -10,11 +10,17 @@ fronit React Hello
 ## Options
 Here are all the available options and their flags:
 
-### Option Type: shorthand, full
-- class component: -c, --class
-- functional component: -f, --functional
-- pure component: -p, --pure
-- state: -s, --state
+### Component Type
+```sh
+# class component
+-c or --class
+# functional component
+-f, --functional
+# pure component
+-p, --pure
+# state
+-s, --state
+```
 
 ### Lifecycle Methods:
 - getDerivedStateFromProps: --gdsfp, --getDerivedStateFromProps
