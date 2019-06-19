@@ -11,15 +11,21 @@ fronit React Hello
 Here are all the available options and their flags:
 
 ### Component Type
+Class Component
 ```sh
-# class component
 -c or --class
-# functional component
--f, --functional
-# pure component
--p, --pure
-# state
--s, --state
+```
+Functional Component
+```sh
+-f or --functional
+```
+Pure Component
+```sh
+-p or --pure
+```
+State
+```sh
+-s or --state
 ```
 
 ### Lifecycle Methods:
