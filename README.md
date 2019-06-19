@@ -51,7 +51,7 @@ fronit React Hello --class --state --componentDidMount .jsx
 # or shorthand
 fronit R Hello -c -s --cdm .jsx
 ```
-This will create a file called Hello.jsx, which will be a class component with this.state and componentDidMount already written inside it.
+This will create a file called *Hello.jsx*, which will be a *class component* with *this.state* and *componentDidMount* already written inside it.
 
 There are a lot more options you can add! To see more options, see the next section for the library/framework you are going to use!
 
