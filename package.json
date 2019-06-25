@@ -1,8 +1,9 @@
 {
   "name": "fronit",
   "author": "Jim Yoon <jimyoon90@gmail.com> (https://github.com/orenJim)",
-  "version": "0.0.0-development",
+  "version": "1.0.1",
   "description": "a command line tool to help quickly and efficiently generate frontend components from popular libraries/frameworks",
+  "keywords": ["fronit", "front end", "CLI", "react", "vue", "angular", "template", "boilerplate"],
   "homepage": "https://github.com/orenJim/fronit",
   "main": "main.js",
   "bin": {
