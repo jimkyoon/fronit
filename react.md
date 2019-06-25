@@ -5,30 +5,37 @@ For **fronit** to make React components, start by writing *React* (or *R*) after
 ```sh
 fronit React Hello
 ```
-**Note that if no options were called, fronit will default React components to a class component with a .jsx extension!**
+**Note: Bare minimum needed to create a React component is *fronit React ComponentName*!**
+
+**Note: If no options were called, fronit will default React components to a class component with a .jsx extension!**
+
+**Note: If choosing multiple types, for instance, choosing Class and Functional or choosing .js and .ts in the same command line, only 1 will be chosen!**
+
+**Note: If class component was chosen, but hook options were called, the class component will be created but hooks will be ignored! Same goes for the other way!**
 
 ## Options
 Here are all the available options and their flags:
 
-### Component Type
-Class Component:
+### Component Types:
+- Class Component:
 ```sh
 -c or --class
 ```
-Functional Component:
+- Functional Component:
 ```sh
 -f or --functional
 ```
-Pure Component:
+- Pure Component:
 ```sh
 -p or --pure
 ```
-State:
+- State:
 ```sh
 -s or --state
 ```
 
 ### Lifecycle Methods:
+*Note: these will only work with class components*
 - getDerivedStateFromProps:
 ```sh
 --gdsfp or --getDerivedStateFromProps
@@ -61,9 +68,9 @@ State:
 ```sh
 --cdc or --componentDidCatch
 ```
-*Note: these will only work with class components*
 
 ### Hooks:
+*Note: these will only work with functional components*
 - useState:
 ```sh
 --us or --useState
@@ -104,7 +111,6 @@ State:
 ```sh
 --udv or --useDebugValue
 ```
-*Note: these will only work with functional components*
 
 ### File Type
 - JS file:
